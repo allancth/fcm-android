@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.google.gms:google-services:3.0.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "org.github.allancth.fcm.android" // give the application the unique id created in Firebase console
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        resValue 'string', 'sender_id', '@gcm.googleapis.com' // sender-id@gcm.googleapis.com
+    }
+    signingConfigs {
+        release {
+            storeFile file('keystore.fcm.android.jks')
+            storePassword 'changeit'
+            keyAlias 'org.github.allancth.fcm.android'
+            keyPassword 'changeit'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.0'
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_main"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              android:orientation="vertical"
+              tools:context=".MainActivity">
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textStyle="bold"
+              android:text="Name"
+              tools:ignore="HardcodedText" />
+
+    <EditText android:id="@+id/name"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="text"
+              android:text="John Doe"
+              tools:ignore="HardcodedText" />
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textStyle="bold"
+              android:text="Message"
+              tools:ignore="HardcodedText" />
+
+    <EditText android:id="@+id/message"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:lines="5"
+              android:inputType="textMultiLine"
+              android:gravity="top"
+              android:text="Hello World!"
+              tools:ignore="HardcodedText" />
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:textStyle="bold"
+              android:text="Options"
+              tools:ignore="HardcodedText" />
+
+    <RadioGroup android:id="@+id/options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        <RadioButton android:id="@+id/receive_message"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:checked="true"
+                     android:text="Receive Message"
+                     tools:ignore="HardcodedText" />
+
+        <RadioButton android:id="@+id/receive_notification"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:text="Receive Notification"
+                     tools:ignore="HardcodedText" />
+    </RadioGroup>
+
+    <Button android:id="@+id/send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            tools:ignore="HardcodedText" />
+
+</LinearLayout>
