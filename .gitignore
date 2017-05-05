@@ -1,5 +1,5 @@
 /.gradle
 /build
 /.idea
-/doc/google-services.json
-fcm-android.iml
+/tmp
+*.iml
